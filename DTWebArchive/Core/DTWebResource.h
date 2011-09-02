@@ -22,6 +22,8 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 - (id)initWithData:(NSData *)data URL:(NSURL *)URL MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName frameName:(NSString *)frameName;
 
+- (NSDictionary *)dictionaryRepresentation;
+
 @property(nonatomic, retain, readonly) NSData *data;
 @property(nonatomic, retain, readonly) NSString *frameName;
 @property(nonatomic, retain, readonly) NSString *mimeType;

@@ -35,5 +35,10 @@
 	return obj;
 }
 
+- (NSData *)dataRepresentation
+{
+	return [NSPropertyListSerialization dataFromPropertyList:self format:NSPropertyListBinaryFormat_v1_0 errorDescription:NULL];
+}
+
 
 @end

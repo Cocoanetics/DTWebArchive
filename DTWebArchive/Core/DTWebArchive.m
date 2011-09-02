@@ -120,6 +120,46 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 	}
 }
 
+- (NSDictionary *)dictionaryRepresentation
+{
+	NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+	
+	if (_mainResource)
+	{
+		[tmpDict setObject:[_mainResource dictionaryRepresentation] forKey:LegacyWebArchiveMainResourceKey];
+	}
+	
+	if (_subresources)
+	{
+		NSMutableArray *tmpArray = [NSMutableArray array];
+		
+		for (DTWebResource *oneResource in _subresources)
+		{
+			[tmpArray addObject:[oneResource dictionaryRepresentation]];
+		}
+		
+		[tmpDict setObject:tmpArray forKey:LegacyWebArchiveSubresourcesKey];
+	}
+	
+	if (_subframeArchives)
+	{
+		NSMutableArray *tmpArray = [NSMutableArray array];
+		
+		for (DTWebArchive *oneArchive in _subframeArchives)
+		{
+			[tmpArray addObject:[oneArchive dictionaryRepresentation]];
+		}
+		
+		[tmpDict setObject:tmpArray forKey:LegacyWebArchiveSubframeArchivesKey];
+	}
+	
+	if (_data)
+	{
+		[tmpDict setObject:_data forKey:LegacyWebArchiveResourceDataKey];
+	}
+	
+	return tmpDict;
+}
 
 #pragma mark Properties
 

@@ -14,4 +14,6 @@
 
 - (id)initWithData:(NSData *)data;
 
+- (NSData *)dataRepresentation;
+
 @end

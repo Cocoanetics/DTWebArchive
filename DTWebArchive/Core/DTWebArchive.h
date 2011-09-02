@@ -28,4 +28,6 @@ extern NSString * WebArchivePboardType;
 - (id)initWithData:(NSData *)data;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+- (NSDictionary *)dictionaryRepresentation;
+
 @end

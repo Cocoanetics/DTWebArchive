@@ -86,6 +86,35 @@ static NSString * const WebResourceResponseKey = @"WebResourceResponse";
 	[super dealloc];
 }
 
+- (NSDictionary *)dictionaryRepresentation
+{
+	NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+	
+	if (_data)
+	{
+		[tmpDict setObject:_data forKey:WebResourceDataKey];
+	}
+	
+	if (_frameName)
+	{
+		[tmpDict setObject:_frameName forKey:WebResourceFrameNameKey];
+	}
+	
+	if (_mimeType)
+	{
+		[tmpDict setObject:_mimeType forKey:WebResourceMIMETypeKey];
+	}
+
+	if (_textEncodingName)
+	{
+		[tmpDict setObject:_textEncodingName forKey:WebResourceTextEncodingNameKey];
+	}
+	
+	// ignoring the NSURLResponse for now
+	
+	return tmpDict;
+}
+
 #pragma mark Properties
 
 @synthesize data = _data;

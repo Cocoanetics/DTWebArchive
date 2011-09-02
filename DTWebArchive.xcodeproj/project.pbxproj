@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71CDA9214111EEF000E602A /* UIPasteboard+DTWebArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = A71CDA9114111EEF000E602A /* UIPasteboard+DTWebArchive.m */; };
 		A73FA68C1410D3B5009B4411 /* DTWebResource.m in Sources */ = {isa = PBXBuildFile; fileRef = A73FA68B1410D3B5009B4411 /* DTWebResource.m */; };
 		A73FA6971410DF69009B4411 /* YouTubeFrame.plist in Resources */ = {isa = PBXBuildFile; fileRef = A73FA6961410DF69009B4411 /* YouTubeFrame.plist */; };
 		A73FA69C14111236009B4411 /* OneImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = A73FA69B14111236009B4411 /* OneImage.plist */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A71CDA9014111EEF000E602A /* UIPasteboard+DTWebArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIPasteboard+DTWebArchive.h"; path = "../../../../Open Source/DTWebArchive/DTWebArchive/Core/UIPasteboard+DTWebArchive.h"; sourceTree = "<group>"; };
+		A71CDA9114111EEF000E602A /* UIPasteboard+DTWebArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIPasteboard+DTWebArchive.m"; path = "../../../../Open Source/DTWebArchive/DTWebArchive/Core/UIPasteboard+DTWebArchive.m"; sourceTree = "<group>"; };
 		A73FA68A1410D3B5009B4411 /* DTWebResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWebResource.h; sourceTree = "<group>"; };
 		A73FA68B1410D3B5009B4411 /* DTWebResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTWebResource.m; sourceTree = "<group>"; };
 		A73FA6961410DF69009B4411 /* YouTubeFrame.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = YouTubeFrame.plist; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				A73FA68B1410D3B5009B4411 /* DTWebResource.m */,
 				A7697CFA1410D05700F25129 /* NSDictionary+Data.h */,
 				A7697CFB1410D05700F25129 /* NSDictionary+Data.m */,
+				A71CDA9014111EEF000E602A /* UIPasteboard+DTWebArchive.h */,
+				A71CDA9114111EEF000E602A /* UIPasteboard+DTWebArchive.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				A7697CF71410CC9200F25129 /* DTWebArchive.m in Sources */,
 				A7697CFC1410D05700F25129 /* NSDictionary+Data.m in Sources */,
 				A73FA68C1410D3B5009B4411 /* DTWebResource.m in Sources */,
+				A71CDA9214111EEF000E602A /* UIPasteboard+DTWebArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
