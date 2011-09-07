@@ -1,5 +1,5 @@
 //
-//  UIPasteboard+UIPasteboard_DTWebArchive.m
+//  UIPasteboard+DTWebArchive.m
 //  DTWebArchive
 //
 //  Created by Oliver Drobnik on 9/2/11.

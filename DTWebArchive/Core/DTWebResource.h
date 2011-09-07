@@ -23,6 +23,7 @@
 - (id)initWithData:(NSData *)data URL:(NSURL *)URL MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName frameName:(NSString *)frameName;
 
 - (NSDictionary *)dictionaryRepresentation;
+- (UIImage *)image;
 
 @property(nonatomic, retain, readonly) NSData *data;
 @property(nonatomic, retain, readonly) NSString *frameName;

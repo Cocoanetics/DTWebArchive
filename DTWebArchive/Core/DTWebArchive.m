@@ -73,6 +73,20 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 	return self;
 }
 
+- (id)initWithMainResource:(DTWebResource *)mainResource subresources:(NSArray *)subresources subframeArchives:(NSArray *)subframeArchives
+{
+	self = [super init];
+	
+	if (self)
+	{
+		self.mainResource = mainResource;
+		self.subresources = subresources;
+		self.subframeArchives = subframeArchives;
+	}
+	
+	return self;
+}
+
 - (void)dealloc	
 {
 	[_mainResource release];

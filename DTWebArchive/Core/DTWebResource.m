@@ -115,6 +115,16 @@ static NSString * const WebResourceResponseKey = @"WebResourceResponse";
 	return tmpDict;
 }
 
+- (UIImage *)image
+{
+	if (![_mimeType hasPrefix:@"image"])
+	{
+		return nil;
+	}
+	
+	return [UIImage imageWithData:_data];
+}
+
 #pragma mark Properties
 
 @synthesize data = _data;

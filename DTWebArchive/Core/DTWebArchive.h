@@ -27,6 +27,7 @@ extern NSString * WebArchivePboardType;
 
 - (id)initWithData:(NSData *)data;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (id)initWithMainResource:(DTWebResource *)mainResource subresources:(NSArray *)subresources subframeArchives:(NSArray *)subframeArchives;
 
 - (NSDictionary *)dictionaryRepresentation;
 
