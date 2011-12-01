@@ -182,8 +182,6 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 		[tmpDict setObject:tmpArray forKey:LegacyWebArchiveSubframeArchivesKey];
 	}
 	
-	[tmpDict setObject:[self data] forKey:LegacyWebArchiveResourceDataKey];
-	
 	return tmpDict;
 }
 
