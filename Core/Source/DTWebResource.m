@@ -45,16 +45,6 @@ NSString *WebResourceResponseKey = @"WebResourceResponse";
 }
 
 
-- (UIImage *)image
-{
-	if (![_MIMEType hasPrefix:@"image"])
-	{
-		return nil;
-	}
-	
-	return [UIImage imageWithData:_data];
-}
-
 #pragma mark Properties
 
 @synthesize data = _data;
