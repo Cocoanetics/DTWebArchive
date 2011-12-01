@@ -8,7 +8,6 @@
 
 #import "DTWebArchive.h"
 #import "DTWebResource.h"
-#import "NSDictionary+Data.h"
 
 
 static NSString * const LegacyWebArchiveMainResourceKey = @"WebMainResource";
@@ -24,53 +23,43 @@ static NSString * const LegacyWebArchiveResourceResponseVersionKey = @"WebResour
 
 NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 
+
 @interface DTWebArchive ()
 
 @property (nonatomic, retain, readwrite) DTWebResource *mainResource;
 @property (nonatomic, retain, readwrite) NSArray *subresources;
 @property (nonatomic, retain, readwrite) NSArray *subframeArchives;
-@property (nonatomic, retain, readwrite) NSData *data;
 
+@end
+
+
+/** Private interface to work with dictionaries */
+@interface DTWebArchive (Dictionary)
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)dictionaryRepresentation;
 - (void)updateFromDictionary:(NSDictionary *)dictionary;
 
 @end
 
+
 @implementation DTWebArchive
+
+#pragma mark Initialization
 
 - (id)initWithData:(NSData *)data
 {
     self = [super init];
     if (self) 
 	{
-		self.data = data;
-		
-		//NSKeyedUnarchiver *a = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-		
-		//id bla = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-		
-		NSDictionary *dict = [NSDictionary dictionaryWithData:data];
+		NSDictionary *dict =[NSPropertyListSerialization propertyListFromData:data 
+															 mutabilityOption:NSPropertyListImmutable 
+																	   format:NULL 
+															 errorDescription:nil];
 		[self updateFromDictionary:dict];
     }
     
     return self;
-}
-
-- (id)initWithDictionary:(NSDictionary *)dictionary
-{
-	self = [super init];
-	
-	if (self)
-	{
-		if (!dictionary)
-		{
-			[self autorelease];
-			return nil;
-		}
-		
-		[self updateFromDictionary:dictionary];
-	}
-	
-	return self;
 }
 
 - (id)initWithMainResource:(DTWebResource *)mainResource subresources:(NSArray *)subresources subframeArchives:(NSArray *)subframeArchives
@@ -87,20 +76,47 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 	return self;
 }
 
-- (void)dealloc	
+#pragma mark Getting Attributes
+
+@synthesize mainResource = _mainResource;
+@synthesize subresources = _subresources;
+@synthesize subframeArchives = _subframeArchives;
+
+- (NSData *)data
 {
-	[_mainResource release];
-	[_subresources release];
-	[_subframeArchives release];
-	[_data release];
+	// need to make a data representation first
+	NSDictionary *dict = [self dictionaryRepresentation];
 	
-	[super dealloc];
+	return [NSPropertyListSerialization dataFromPropertyList:dict
+													  format:NSPropertyListBinaryFormat_v1_0 
+											errorDescription:NULL];
+}
+
+@end
+
+
+@implementation DTWebArchive (Dictionary)
+
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+	self = [super init];
+	
+	if (self)
+	{
+		if (!dictionary)
+		{
+			return nil;
+		}
+		
+		[self updateFromDictionary:dictionary];
+	}
+	
+	return self;
 }
 
 - (void)updateFromDictionary:(NSDictionary *)dictionary
 {
-	self.mainResource = [DTWebResource webResourceWithDictionary:[dictionary objectForKey:LegacyWebArchiveMainResourceKey]];
-	
+	self.mainResource = [[DTWebResource alloc] initWithDictionary:[dictionary objectForKey:LegacyWebArchiveMainResourceKey]];
 	
 	NSArray *subresources = [dictionary objectForKey:LegacyWebArchiveSubresourcesKey];
 	if (subresources)
@@ -112,7 +128,7 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 		{
 			DTWebResource *oneResource = [[DTWebResource alloc] initWithDictionary:oneResourceDict];
 			[tmpArray addObject:oneResource];
-			[oneResource release];		}
+		}
 		
 		self.subresources = tmpArray;
 	}
@@ -127,7 +143,6 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 		{
 			DTWebArchive *oneArchive = [[DTWebArchive alloc] initWithDictionary:oneArchiveDict];
 			[tmpArray addObject:oneArchive];
-			[oneArchive release];
 		}
 		
 		self.subframeArchives = tmpArray;
@@ -167,19 +182,9 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 		[tmpDict setObject:tmpArray forKey:LegacyWebArchiveSubframeArchivesKey];
 	}
 	
-	if (_data)
-	{
-		[tmpDict setObject:_data forKey:LegacyWebArchiveResourceDataKey];
-	}
+	[tmpDict setObject:[self data] forKey:LegacyWebArchiveResourceDataKey];
 	
 	return tmpDict;
 }
-
-#pragma mark Properties
-
-@synthesize mainResource = _mainResource;
-@synthesize subresources = _subresources;
-@synthesize subframeArchives = _subframeArchives;
-@synthesize data = _data;
 
 @end

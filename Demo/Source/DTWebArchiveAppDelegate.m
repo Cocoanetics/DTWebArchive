@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#warning This Demo has no UI, the functionaliy is only demonstrated in the app delegate
+	
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"OneImage" ofType:@"plist"];
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	

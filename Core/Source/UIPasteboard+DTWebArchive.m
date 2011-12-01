@@ -9,7 +9,6 @@
 #import "UIPasteboard+DTWebArchive.h"
 
 #import "DTWebArchive.h"
-#import "NSDictionary+Data.h"
 
 @implementation UIPasteboard (DTWebArchive)
 
@@ -17,16 +16,12 @@
 {
 	NSData *data = [self dataForPasteboardType:WebArchivePboardType];
 	
-	DTWebArchive *webArchive = [[DTWebArchive alloc] initWithData:data];
-	
-	return [webArchive autorelease];
+	return [[DTWebArchive alloc] initWithData:data];
 }
 
 - (void)setWebArchive:(DTWebArchive *)webArchive
 {
-	NSData *data = [[webArchive dictionaryRepresentation] dataRepresentation];
-	
-	[self setData:data forPasteboardType:WebArchivePboardType];
+	[self setData:[webArchive data] forPasteboardType:WebArchivePboardType];
 }
 
 @end
