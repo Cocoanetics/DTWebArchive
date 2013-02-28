@@ -76,6 +76,7 @@
 		A7697CD31410CC6400F25129 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A7697CD51410CC6400F25129 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A7697CD71410CC6400F25129 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A7859D3C16DF52C80076F2DB /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +179,7 @@
 		A7697CC41410CC6400F25129 = {
 			isa = PBXGroup;
 			children = (
+				A7859D3C16DF52C80076F2DB /* AppledocSettings.plist */,
 				A74352E214867A2700F4C766 /* Demo */,
 				A74352CD14867A1C00F4C766 /* Core */,
 				A74352F414867A3700F4C766 /* Documentation */,
@@ -307,7 +309,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"DTWebArchive\" \\\n--project-company \"Cocoanetics\" \\\n--company-id \"com.cocoanetics\" \\\n--docset-atom-filename \"DTWebArchive.atom\" \\\n--docset-feed-url \"http://cocoanetics.github.com/DTWebArchive/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://cocoanetics.github.com/DTWebArchive/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://cocoanetics.github.com/DTWebArchive/\" \\\n--output \"~/help/DTWebArchive/\" \\\n--publish-docset \\\n--logformat xcode \\\n--no-warn-undocumented-member \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--explicit-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LoadableCategory.h\" \\\n--index-desc \"${PROJECT_DIR}/readme.markdown\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/local/bin/appledoc --print-settings --output \"${BUILD_DIR}/Documentation/\" \"${PROJECT_DIR}\"\necho \"Documentation Output directory: ${BUILD_DIR}/Documentation/\"";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
