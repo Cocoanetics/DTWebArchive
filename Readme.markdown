@@ -9,9 +9,11 @@ I put this into it's own GitHub project instead of adding it to NSAttributedStri
 
 License
 ------- 
- 
-It is open source and covered by a standard BSD license. That means you have to mention *Cocoanetics* as the original author of this code. You can purchase a Non-Attribution-License from us.
 
+It is open source and covered by a standard 2-clause BSD license. That means you have to mention *Cocoanetics* as the original author of this code and reproduce the LICENSE text inside your app.
+
+You can purchase a [Non-Attribution-License](http://www.cocoanetics.com/order/?product=DTWebArchive%20Non-Attribution%20License) for 75 Euros for not having to include the LICENSE text.
+ 
 Documentation
 -------------
 
