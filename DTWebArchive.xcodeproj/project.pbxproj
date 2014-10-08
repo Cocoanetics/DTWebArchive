@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		A717BE1F19E5AD970024EF95 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A717BE1E19E5AD970024EF95 /* Default-568h@2x.png */; };
 		A74352DF14867A1C00F4C766 /* OneImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74352D814867A1C00F4C766 /* OneImage.plist */; };
 		A74352E014867A1C00F4C766 /* Simple.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74352D914867A1C00F4C766 /* Simple.plist */; };
 		A74352E114867A1C00F4C766 /* YouTubeFrame.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74352DA14867A1C00F4C766 /* YouTubeFrame.plist */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A717BE1E19E5AD970024EF95 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A74352CF14867A1C00F4C766 /* DTWebArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWebArchive.h; sourceTree = "<group>"; };
 		A74352D014867A1C00F4C766 /* DTWebArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTWebArchive.m; sourceTree = "<group>"; };
 		A74352D114867A1C00F4C766 /* DTWebResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWebResource.h; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		A7697CC41410CC6400F25129 = {
 			isa = PBXGroup;
 			children = (
+				A717BE1E19E5AD970024EF95 /* Default-568h@2x.png */,
 				A7859D3C16DF52C80076F2DB /* AppledocSettings.plist */,
 				A74352E214867A2700F4C766 /* Demo */,
 				A74352CD14867A1C00F4C766 /* Core */,
@@ -292,6 +295,7 @@
 				A74352E114867A1C00F4C766 /* YouTubeFrame.plist in Resources */,
 				A74352EF14867A2700F4C766 /* MainWindow.xib in Resources */,
 				A74352F014867A2700F4C766 /* RootViewController.xib in Resources */,
+				A717BE1F19E5AD970024EF95 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
