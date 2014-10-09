@@ -353,6 +353,10 @@
 		A743531314867ACD00F4C766 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/DTWebArchive.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -368,6 +372,10 @@
 		A743531414867ACD00F4C766 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/DTWebArchive.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
