@@ -37,7 +37,9 @@
 		A7697CD41410CC6400F25129 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7697CD31410CC6400F25129 /* UIKit.framework */; };
 		A7697CD61410CC6400F25129 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7697CD51410CC6400F25129 /* Foundation.framework */; };
 		A7697CD81410CC6400F25129 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7697CD71410CC6400F25129 /* CoreGraphics.framework */; };
-		A7BD813D1A976CC600DF9603 /* UIPasteboard+DTWebArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = A7BD813B1A976CC600DF9603 /* UIPasteboard+DTWebArchive.h */; };
+		A7B1305F1B4B2A330014E109 /* DTWebArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = A74352CF14867A1C00F4C766 /* DTWebArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7B130601B4B2A330014E109 /* DTWebResource.h in Headers */ = {isa = PBXBuildFile; fileRef = A74352D114867A1C00F4C766 /* DTWebResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7BD813D1A976CC600DF9603 /* UIPasteboard+DTWebArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = A7BD813B1A976CC600DF9603 /* UIPasteboard+DTWebArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7BD813E1A976CC600DF9603 /* UIPasteboard+DTWebArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD813C1A976CC600DF9603 /* UIPasteboard+DTWebArchive.m */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +228,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B130601B4B2A330014E109 /* DTWebResource.h in Headers */,
+				A7B1305F1B4B2A330014E109 /* DTWebArchive.h in Headers */,
 				A7BD813D1A976CC600DF9603 /* UIPasteboard+DTWebArchive.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +436,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PUBLIC_HEADERS_FOLDER_PATH = ../../DTWebArchive;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -449,6 +454,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PUBLIC_HEADERS_FOLDER_PATH = ../../DTWebArchive;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
