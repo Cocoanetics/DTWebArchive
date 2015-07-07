@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'DTWebArchive'
-  spec.version      = '0.0.2'
+  spec.version      = '0.0.3'
   spec.summary      = "A lightweight class to allow interaction with the WebArchive Pasteboard type used by Apple's iOS apps"
   spec.homepage     = "https://github.com/Cocoanetics/DTWebArchive"
   spec.author       = { "Oliver Drobnik" => "oliver@cocoanetics.com" }
