@@ -58,23 +58,25 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 
 - (id)initWithData:(NSData *)data
 {
-    self = [super init];
-    if (self) 
+	self = [super init];
+	if (self)
 	{
-		NSDictionary *dict =[NSPropertyListSerialization propertyListFromData:data 
-															 mutabilityOption:NSPropertyListImmutable 
-																	   format:NULL 
-															 errorDescription:nil];
-        
-        if (!dict)
-        {
-            return nil;
-        }
-        
+		NSError *error;
+		NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data
+																							options:0
+																							 format:NULL
+																							  error:&error];
+		
+		if (!dict)
+		{
+			NSLog(@"%@", [error localizedDescription]);
+			return nil;
+		}
+		
 		[self updateFromDictionary:dict];
-    }
-    
-    return self;
+	}
+	
+	return self;
 }
 
 - (id)initWithMainResource:(DTWebResource *)mainResource subresources:(NSArray *)subresources subframeArchives:(NSArray *)subframeArchives
@@ -102,9 +104,18 @@ NSString * WebArchivePboardType = @"Apple Web Archive pasteboard type";
 	// need to make a data representation first
 	NSDictionary *dict = [self dictionaryRepresentation];
 	
-	return [NSPropertyListSerialization dataFromPropertyList:dict
-													  format:NSPropertyListBinaryFormat_v1_0 
-											errorDescription:NULL];
+	NSError *error;
+	NSData *data = [NSPropertyListSerialization dataWithPropertyList:dict
+																				 format:NSPropertyListBinaryFormat_v1_0
+																				options:0
+																				  error:&error];
+	
+	if (!data)
+	{
+		NSLog(@"%@", error);
+	}
+	
+	return data;
 }
 
 @end
